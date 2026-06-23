@@ -21,3 +21,9 @@ jobs:
       - name: Analysing the code with pylint
         run: |
           pylint $(git ls-files '*.py')
+      - name: Running unit tests with pytest
+        run: |
+            python -m pytest
+      - name: Security check with bandit
+        run: |
+                python -m bandit app.py counter.py
